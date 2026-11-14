@@ -1,0 +1,59 @@
+{
+  "run_at": "2026-11-14T11:12:06+07:00",
+  "config": {
+    "A": {
+      "index": "A",
+      "chunking": "fixed_size",
+      "size": 500,
+      "overlap": 50,
+      "use_filter": false
+    },
+    "B": {
+      "index": "B",
+      "chunking": "by_paragraph",
+      "max_size": 800,
+      "use_filter": false
+    },
+    "C": {
+      "index": "B",
+      "chunking": "by_paragraph",
+      "max_size": 800,
+      "use_filter": true
+    }
+  },
+  "rows": [
+    {
+      "strategy": "A",
+      "split": "test",
+      "n": 5,
+      "hit_at_1": "2/5",
+      "hit_at_1_pct": 40.0,
+      "hit_at_3": "4/5",
+      "hit_at_3_pct": 80.0,
+      "filter_compliance": "N/A",
+      "split_evidence_cases": 1
+    },
+    {
+      "strategy": "B",
+      "split": "test",
+      "n": 5,
+      "hit_at_1": "4/5",
+      "hit_at_1_pct": 80.0,
+      "hit_at_3": "5/5",
+      "hit_at_3_pct": 100.0,
+      "filter_compliance": "N/A",
+      "split_evidence_cases": 0
+    },
+    {
+      "strategy": "C",
+      "split": "test",
+      "n": 5,
+      "hit_at_1": "5/5",
+      "hit_at_1_pct": 100.0,
+      "hit_at_3": "5/5",
+      "hit_at_3_pct": 100.0,
+      "filter_compliance": "1/1",
+      "split_evidence_cases": 0
+    }
+  ]
+}
