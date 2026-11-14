@@ -1,0 +1,58 @@
+{
+  "labeled_by": "Claude (AI) đề xuất; tác giả Trương Thị Thu Hà đã đọc lại và đồng ý",
+  "coherence": {
+    "A": {
+      "n": 10,
+      "sum": 9,
+      "mean_of_2": 0.9
+    },
+    "B": {
+      "n": 10,
+      "sum": 17,
+      "mean_of_2": 1.7
+    },
+    "C": {
+      "n": 10,
+      "sum": 17,
+      "mean_of_2": 1.7,
+      "note": "C dùng chung chunk với B"
+    }
+  },
+  "metadata": {
+    "A": {
+      "records_ok": "15/15",
+      "filter_compliance": "N/A"
+    },
+    "B": {
+      "records_ok": "15/15",
+      "filter_compliance": "N/A"
+    },
+    "C": {
+      "records_ok": "15/15",
+      "filter_compliance": "1/1"
+    }
+  },
+  "grounding": {
+    "A": {
+      "n": 5,
+      "count_0": 0,
+      "count_1": 1,
+      "count_2": 4,
+      "mean_of_2": 1.8
+    },
+    "B": {
+      "n": 5,
+      "count_0": 0,
+      "count_1": 0,
+      "count_2": 5,
+      "mean_of_2": 2.0
+    },
+    "C": {
+      "n": 5,
+      "count_0": 0,
+      "count_1": 0,
+      "count_2": 5,
+      "mean_of_2": 2.0
+    }
+  }
+}
