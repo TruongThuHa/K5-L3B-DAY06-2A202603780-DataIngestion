@@ -1,0 +1,42 @@
+{
+  "run_at": "2026-11-14T11:00:51+07:00",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "dimensions": 384,
+  "vector_store": "PostgreSQL 16 + pgvector, cosine distance, exact search (không dùng index ANN)",
+  "content_pages": 82,
+  "load_and_chunk_seconds": 1.44,
+  "cost_usd": 0,
+  "page_log": {
+    "excluded": 20,
+    "empty": 0,
+    "error": 0
+  },
+  "strategies": {
+    "A": {
+      "chunks": 585,
+      "rows_in_db_before": 585,
+      "rows_in_db_after": 585,
+      "written": 585,
+      "removed_obsolete": 0,
+      "embed_and_store_seconds": 2.41,
+      "total_chars": 274603,
+      "len_min": 52,
+      "len_median": 500,
+      "len_mean": 469.4,
+      "len_max": 500
+    },
+    "B": {
+      "chunks": 416,
+      "rows_in_db_before": 416,
+      "rows_in_db_after": 416,
+      "written": 416,
+      "removed_obsolete": 0,
+      "embed_and_store_seconds": 5.99,
+      "total_chars": 249261,
+      "len_min": 22,
+      "len_median": 645,
+      "len_mean": 599.2,
+      "len_max": 800
+    }
+  }
+}

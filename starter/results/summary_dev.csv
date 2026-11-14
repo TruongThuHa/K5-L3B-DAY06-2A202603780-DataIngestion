@@ -1,0 +1,4 @@
+strategy,split,n,hit_at_1,hit_at_1_pct,hit_at_3,hit_at_3_pct,filter_compliance,split_evidence_cases
+A,dev,15,8/15,53.3,11/15,73.3,N/A,3
+B,dev,15,9/15,60.0,11/15,73.3,N/A,2
+C,dev,15,9/15,60.0,12/15,80.0,2/2,1
