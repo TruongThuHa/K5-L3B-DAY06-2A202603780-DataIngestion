@@ -1,47 +1,54 @@
-# Day 06 · Data Ingestion Engineering
+# Day 06 · Data Ingestion Engineering — Bài nộp của Trương Thị Thu Hà (2A202603780, L3B)
 
-**Lab cá nhân** · **4 giờ** · **Dữ liệu tự chọn**
+Pipeline biến báo cáo World Bank 2020 về giáo dục đại học Việt Nam (82 trang) thành kho tri thức truy xuất được, rồi so sánh 3 cấu hình chuẩn bị dữ liệu trên 20 câu hỏi có bằng chứng. Đề bài gốc: https://github.com/VinUni-AI20k/K5-L3-Day06-DataIngestionEngineering
 
-Biến tài liệu thành kho tri thức có thể truy xuất cho AI agent, rồi đo xem cách chuẩn bị dữ liệu nào hiệu quả nhất.
+- Báo cáo: [report/individual/2A202603780_TruongThiThuHa.md](report/individual/2A202603780_TruongThiThuHa.md)
+- Thông tin học viên: [STUDENT.md](STUDENT.md)
 
-| 📄 Dữ liệu | 🧩 Chiến lược | 🎯 Benchmark |
-|---|---|---|
-| Tối thiểu **30 trang nội dung** | Tối thiểu **3 cấu hình** | Tối thiểu **20 câu hỏi** |
+## Cấu trúc
 
-## Bắt đầu nhanh
+~~~text
+STUDENT.md
+benchmark/questions.json, README.md     # 20 câu (15 dev / 5 test), gold evidence, cách chia, tiêu chí chọn
+artifacts/experiment_log.csv            # cấu hình, giả thuyết, kết quả A/B/C
+starter/data/he2020.pdf, manifest.json  # corpus (CC BY 3.0 IGO) + manifest trang/quyền/số ký tự
+starter/src/                            # code pipeline
+starter/results/                        # thống kê ingest, log trang, trace top-3, bảng kết quả, audit
+report/individual/2A202603780_TruongThiThuHa.md
+~~~
 
-Dùng [starter PostgreSQL + pgvector](starter/README.md) để dựng database và hoàn thiện các hàm TODO, hoặc tự chọn vector store tương đương. Starter chỉ là khung: **bạn tự hiện thực pipeline và benchmark**.
+## Cài đặt (macOS, Python 3.13, Docker Desktop)
 
-## 1. Xây pipeline
+~~~bash
+cd starter
+python3.13 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+cp .env.example .env
+docker compose -p day6_student_starter up -d --wait
+python scripts/check_setup.py        # kỳ vọng: Setup OK
+~~~
 
-![Đọc tài liệu, chuẩn hóa, chia chunk, tạo vector, lưu và kiểm tra](assets/ingestion-pipeline.svg)
+Embedding: `BAAI/bge-small-en-v1.5` chạy local (tự tải ~130 MB lần đầu, không cần API key, chi phí 0). Vector store: PostgreSQL 16 + pgvector (cosine, exact search).
 
-Chọn tài liệu được phép sử dụng; giữ **ID tài liệu, nguồn, trang/vị trí** và metadata phù hợp. Dùng embedding model thật qua API hoặc chạy local; lưu và truy xuất bằng pgvector, Qdrant, Chroma hoặc một store tương đương.
+## Chạy (từ thư mục `starter/`)
 
-## 2. So sánh và đánh giá
+~~~bash
+python -m src.run check                  # 20/20 evidence có trong text đã chuẩn hóa
+python -m src.run ingest                 # đọc, chia chunk A/B, embed, lưu; chạy 2 lần để kiểm tra không nhân đôi
+python -m src.run evaluate --split dev   # 15 câu dev cho A, B, C
+python -m src.explog                     # ghi artifacts/experiment_log.csv
+python -m src.run evaluate --split test  # 5 câu test, chạy 1 lần sau khi đã chốt cấu hình
+python -m src.audit                      # tạo bảng chấm tay
+python -m src.apply_labels               # điền nhãn đã duyệt + tính điểm audit
+~~~
 
-![Ba chiến lược được đánh giá trên cùng corpus và benchmark dev/test](assets/benchmark-workflow.svg)
+## Kết quả chính
 
-Dùng cùng dữ liệu, model và câu hỏi cho cả ba cấu hình. Tách **15 câu dev / 5 câu test** trước khi chạy; chọn cấu hình trên dev, rồi đánh giá test sau khi cố định. Mỗi câu hỏi cần có đoạn bằng chứng và trang nguồn; thiết kế bộ câu hỏi và đánh giá theo [BENCHMARK.md](BENCHMARK.md).
+| Cấu hình | Dev Hit@1 | Dev Hit@3 | Test Hit@1 | Test Hit@3 | Coherence /2 | Grounding /2 |
+|---|---|---|---|---|---|---|
+| A: cố định 500/50 | 8/15 | 11/15 | 2/5 | 4/5 | 0,9 | 1,8 |
+| B: theo đoạn ≤800 | 9/15 | 11/15 | 4/5 | 5/5 | 1,7 | 2,0 |
+| C: B + lọc `section` (được chọn) | 9/15 | 12/15 | 5/5 | 5/5 | 1,7 | 2,0 |
 
-Đánh giá theo năm khía cạnh: **độ chính xác truy xuất**, **tính mạch lạc của chunk**, **tính hữu dụng của metadata**, **chất lượng grounding** và **tác động của chiến lược dữ liệu**. Giải thích lựa chọn bằng kết quả, ví dụ lỗi và các đánh đổi.
-
-## 3. Chuẩn bị bài nộp
-
-1. Chạy pipeline và lưu cấu hình, kết quả top-3, trace cùng nhãn đánh giá thủ công.
-2. Điền [thông tin học viên](STUDENT.md), [nhật ký thí nghiệm](artifacts/experiment_log.csv) và bản sao [mẫu báo cáo cá nhân](report/individual/MSSV_HoTen.md).
-3. Kiểm tra mã nguồn, cách chạy, manifest dữ liệu và checklist trong [SUBMISSION.md](SUBMISSION.md).
-
-## Tài liệu hướng dẫn
-
-| Bạn cần tìm | Tài liệu |
-|---|---|
-| Setup baseline PostgreSQL + pgvector | [starter/README.md](starter/README.md) |
-| Các bước làm và cách tính chỉ số | [GUIDE.md](GUIDE.md) |
-| Tiến độ trong 4 giờ | [CHECKPOINTS.md](CHECKPOINTS.md) |
-| Năm tiêu chí benchmark và bộ câu hỏi | [BENCHMARK.md](BENCHMARK.md) |
-| Tiêu chí chấm điểm | [RUBRIC.md](RUBRIC.md) |
-| Quy tắc sử dụng dữ liệu, AI và API | [RULES.md](RULES.md) |
-| Cách nộp bài | [SUBMISSION.md](SUBMISSION.md) |
-
-[data/format-example.json](data/format-example.json) chỉ minh họa định dạng, không phải corpus đủ điều kiện. Phần xử lý và benchmark do bạn tự hiện thực; không bắt buộc xây chatbot.
+Test chỉ có 5 câu nên không kết luận tổng quát. Chi tiết và hạn chế xem báo cáo.
