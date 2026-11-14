@@ -1,0 +1,530 @@
+{
+  "corpus_name": "Vietnam Higher Education — World Bank 2020",
+  "counting_rule": "Đếm các trang PDF có nội dung chính: Executive Summary + Chương 1–3. Loại trang bìa, bản quyền, mục lục, danh mục viết tắt, lời cảm ơn (PDF tr. 1–12), trang trắng (tr. 30, 36), tài liệu tham khảo và bìa sau (tr. 97–102).",
+  "char_count_method": "pypdf 6.x extract_text(), chuẩn hóa Unicode NFC, gộp khoảng trắng; sẽ cập nhật lại theo pipeline chuẩn hóa của bài.",
+  "sources": [
+    {
+      "source_id": "he2020",
+      "title": "Improving the Performance of Higher Education in Vietnam: Strategic Priorities and Policy Options",
+      "authors": "Dilip Parajuli, Dung Kieu Vo, Jamil Salmi, Nguyet Thi Anh Tran",
+      "publisher": "World Bank, Washington, DC",
+      "year": 2020,
+      "language": "en",
+      "source_path_or_url": "https://documents1.worldbank.org/curated/en/347431588175259657/Improving-the-Performance-of-Higher-Education-in-Vietnam-Strategic-Priorities-and-Policy-Options.pdf",
+      "local_path": "data/he2020.pdf",
+      "record_url": "https://hdl.handle.net/10986/33681",
+      "license_or_permission": "CC BY 3.0 IGO (ghi trên trang hồ sơ Open Knowledge Repository của World Bank). Cho phép dùng và phân phối lại, bắt buộc ghi nguồn.",
+      "attribution": "World Bank. 2020. Improving the Performance of Higher Education in Vietnam: Strategic Priorities and Policy Options. © World Bank. http://hdl.handle.net/10986/33681 License: CC BY 3.0 IGO.",
+      "accessed_at": "2026-11-14",
+      "snapshot_sha256": "5d11b0bb874b418866d520612822f5d7350c49699eb40f496ae835395e0948cd",
+      "physical_pages": 102,
+      "content_pages_counted": 82,
+      "total_chars": 249600,
+      "filter_field": {
+        "name": "section",
+        "type": "string",
+        "values": [
+          "executive_summary",
+          "introduction",
+          "diagnosis",
+          "policy_options"
+        ],
+        "value_source": "Tiêu đề chương in trong PDF (Executive Summary; 1. Introduction; 2. Diagnosis of the Vietnamese Higher Education System; 3. Policy Options)"
+      },
+      "pages": [
+        {
+          "page_id": "he2020-p013",
+          "pdf_page": 13,
+          "section": "executive_summary",
+          "chars": 3613
+        },
+        {
+          "page_id": "he2020-p014",
+          "pdf_page": 14,
+          "section": "executive_summary",
+          "chars": 2784
+        },
+        {
+          "page_id": "he2020-p015",
+          "pdf_page": 15,
+          "section": "executive_summary",
+          "chars": 3676
+        },
+        {
+          "page_id": "he2020-p016",
+          "pdf_page": 16,
+          "section": "executive_summary",
+          "chars": 2903
+        },
+        {
+          "page_id": "he2020-p017",
+          "pdf_page": 17,
+          "section": "executive_summary",
+          "chars": 3932
+        },
+        {
+          "page_id": "he2020-p018",
+          "pdf_page": 18,
+          "section": "executive_summary",
+          "chars": 3590
+        },
+        {
+          "page_id": "he2020-p019",
+          "pdf_page": 19,
+          "section": "executive_summary",
+          "chars": 3680
+        },
+        {
+          "page_id": "he2020-p020",
+          "pdf_page": 20,
+          "section": "executive_summary",
+          "chars": 2752
+        },
+        {
+          "page_id": "he2020-p021",
+          "pdf_page": 21,
+          "section": "executive_summary",
+          "chars": 3452
+        },
+        {
+          "page_id": "he2020-p022",
+          "pdf_page": 22,
+          "section": "executive_summary",
+          "chars": 3359
+        },
+        {
+          "page_id": "he2020-p023",
+          "pdf_page": 23,
+          "section": "executive_summary",
+          "chars": 3207
+        },
+        {
+          "page_id": "he2020-p024",
+          "pdf_page": 24,
+          "section": "executive_summary",
+          "chars": 3545
+        },
+        {
+          "page_id": "he2020-p025",
+          "pdf_page": 25,
+          "section": "executive_summary",
+          "chars": 2981
+        },
+        {
+          "page_id": "he2020-p026",
+          "pdf_page": 26,
+          "section": "executive_summary",
+          "chars": 1286
+        },
+        {
+          "page_id": "he2020-p027",
+          "pdf_page": 27,
+          "section": "executive_summary",
+          "chars": 2892
+        },
+        {
+          "page_id": "he2020-p028",
+          "pdf_page": 28,
+          "section": "executive_summary",
+          "chars": 2824
+        },
+        {
+          "page_id": "he2020-p029",
+          "pdf_page": 29,
+          "section": "executive_summary",
+          "chars": 2339
+        },
+        {
+          "page_id": "he2020-p031",
+          "pdf_page": 31,
+          "section": "introduction",
+          "chars": 3654
+        },
+        {
+          "page_id": "he2020-p032",
+          "pdf_page": 32,
+          "section": "introduction",
+          "chars": 4124
+        },
+        {
+          "page_id": "he2020-p033",
+          "pdf_page": 33,
+          "section": "introduction",
+          "chars": 3169
+        },
+        {
+          "page_id": "he2020-p034",
+          "pdf_page": 34,
+          "section": "introduction",
+          "chars": 2480
+        },
+        {
+          "page_id": "he2020-p035",
+          "pdf_page": 35,
+          "section": "introduction",
+          "chars": 911
+        },
+        {
+          "page_id": "he2020-p037",
+          "pdf_page": 37,
+          "section": "diagnosis",
+          "chars": 1265
+        },
+        {
+          "page_id": "he2020-p038",
+          "pdf_page": 38,
+          "section": "diagnosis",
+          "chars": 3605
+        },
+        {
+          "page_id": "he2020-p039",
+          "pdf_page": 39,
+          "section": "diagnosis",
+          "chars": 2887
+        },
+        {
+          "page_id": "he2020-p040",
+          "pdf_page": 40,
+          "section": "diagnosis",
+          "chars": 2356
+        },
+        {
+          "page_id": "he2020-p041",
+          "pdf_page": 41,
+          "section": "diagnosis",
+          "chars": 2543
+        },
+        {
+          "page_id": "he2020-p042",
+          "pdf_page": 42,
+          "section": "diagnosis",
+          "chars": 3566
+        },
+        {
+          "page_id": "he2020-p043",
+          "pdf_page": 43,
+          "section": "diagnosis",
+          "chars": 2650
+        },
+        {
+          "page_id": "he2020-p044",
+          "pdf_page": 44,
+          "section": "diagnosis",
+          "chars": 2328
+        },
+        {
+          "page_id": "he2020-p045",
+          "pdf_page": 45,
+          "section": "diagnosis",
+          "chars": 2701
+        },
+        {
+          "page_id": "he2020-p046",
+          "pdf_page": 46,
+          "section": "diagnosis",
+          "chars": 3051
+        },
+        {
+          "page_id": "he2020-p047",
+          "pdf_page": 47,
+          "section": "diagnosis",
+          "chars": 3629
+        },
+        {
+          "page_id": "he2020-p048",
+          "pdf_page": 48,
+          "section": "diagnosis",
+          "chars": 3815
+        },
+        {
+          "page_id": "he2020-p049",
+          "pdf_page": 49,
+          "section": "diagnosis",
+          "chars": 3593
+        },
+        {
+          "page_id": "he2020-p050",
+          "pdf_page": 50,
+          "section": "diagnosis",
+          "chars": 2243
+        },
+        {
+          "page_id": "he2020-p051",
+          "pdf_page": 51,
+          "section": "diagnosis",
+          "chars": 3057
+        },
+        {
+          "page_id": "he2020-p052",
+          "pdf_page": 52,
+          "section": "diagnosis",
+          "chars": 3049
+        },
+        {
+          "page_id": "he2020-p053",
+          "pdf_page": 53,
+          "section": "diagnosis",
+          "chars": 3754
+        },
+        {
+          "page_id": "he2020-p054",
+          "pdf_page": 54,
+          "section": "diagnosis",
+          "chars": 2226
+        },
+        {
+          "page_id": "he2020-p055",
+          "pdf_page": 55,
+          "section": "diagnosis",
+          "chars": 3691
+        },
+        {
+          "page_id": "he2020-p056",
+          "pdf_page": 56,
+          "section": "diagnosis",
+          "chars": 3069
+        },
+        {
+          "page_id": "he2020-p057",
+          "pdf_page": 57,
+          "section": "diagnosis",
+          "chars": 2427
+        },
+        {
+          "page_id": "he2020-p058",
+          "pdf_page": 58,
+          "section": "diagnosis",
+          "chars": 2468
+        },
+        {
+          "page_id": "he2020-p059",
+          "pdf_page": 59,
+          "section": "diagnosis",
+          "chars": 2412
+        },
+        {
+          "page_id": "he2020-p060",
+          "pdf_page": 60,
+          "section": "diagnosis",
+          "chars": 1805
+        },
+        {
+          "page_id": "he2020-p061",
+          "pdf_page": 61,
+          "section": "diagnosis",
+          "chars": 3078
+        },
+        {
+          "page_id": "he2020-p062",
+          "pdf_page": 62,
+          "section": "diagnosis",
+          "chars": 2353
+        },
+        {
+          "page_id": "he2020-p063",
+          "pdf_page": 63,
+          "section": "diagnosis",
+          "chars": 3794
+        },
+        {
+          "page_id": "he2020-p064",
+          "pdf_page": 64,
+          "section": "diagnosis",
+          "chars": 607
+        },
+        {
+          "page_id": "he2020-p065",
+          "pdf_page": 65,
+          "section": "policy_options",
+          "chars": 3197
+        },
+        {
+          "page_id": "he2020-p066",
+          "pdf_page": 66,
+          "section": "policy_options",
+          "chars": 3845
+        },
+        {
+          "page_id": "he2020-p067",
+          "pdf_page": 67,
+          "section": "policy_options",
+          "chars": 2332
+        },
+        {
+          "page_id": "he2020-p068",
+          "pdf_page": 68,
+          "section": "policy_options",
+          "chars": 3344
+        },
+        {
+          "page_id": "he2020-p069",
+          "pdf_page": 69,
+          "section": "policy_options",
+          "chars": 3623
+        },
+        {
+          "page_id": "he2020-p070",
+          "pdf_page": 70,
+          "section": "policy_options",
+          "chars": 3086
+        },
+        {
+          "page_id": "he2020-p071",
+          "pdf_page": 71,
+          "section": "policy_options",
+          "chars": 3920
+        },
+        {
+          "page_id": "he2020-p072",
+          "pdf_page": 72,
+          "section": "policy_options",
+          "chars": 2666
+        },
+        {
+          "page_id": "he2020-p073",
+          "pdf_page": 73,
+          "section": "policy_options",
+          "chars": 3957
+        },
+        {
+          "page_id": "he2020-p074",
+          "pdf_page": 74,
+          "section": "policy_options",
+          "chars": 3255
+        },
+        {
+          "page_id": "he2020-p075",
+          "pdf_page": 75,
+          "section": "policy_options",
+          "chars": 3173
+        },
+        {
+          "page_id": "he2020-p076",
+          "pdf_page": 76,
+          "section": "policy_options",
+          "chars": 2789
+        },
+        {
+          "page_id": "he2020-p077",
+          "pdf_page": 77,
+          "section": "policy_options",
+          "chars": 3944
+        },
+        {
+          "page_id": "he2020-p078",
+          "pdf_page": 78,
+          "section": "policy_options",
+          "chars": 4077
+        },
+        {
+          "page_id": "he2020-p079",
+          "pdf_page": 79,
+          "section": "policy_options",
+          "chars": 3031
+        },
+        {
+          "page_id": "he2020-p080",
+          "pdf_page": 80,
+          "section": "policy_options",
+          "chars": 1686
+        },
+        {
+          "page_id": "he2020-p081",
+          "pdf_page": 81,
+          "section": "policy_options",
+          "chars": 4841
+        },
+        {
+          "page_id": "he2020-p082",
+          "pdf_page": 82,
+          "section": "policy_options",
+          "chars": 3266
+        },
+        {
+          "page_id": "he2020-p083",
+          "pdf_page": 83,
+          "section": "policy_options",
+          "chars": 3527
+        },
+        {
+          "page_id": "he2020-p084",
+          "pdf_page": 84,
+          "section": "policy_options",
+          "chars": 2936
+        },
+        {
+          "page_id": "he2020-p085",
+          "pdf_page": 85,
+          "section": "policy_options",
+          "chars": 3309
+        },
+        {
+          "page_id": "he2020-p086",
+          "pdf_page": 86,
+          "section": "policy_options",
+          "chars": 4025
+        },
+        {
+          "page_id": "he2020-p087",
+          "pdf_page": 87,
+          "section": "policy_options",
+          "chars": 3693
+        },
+        {
+          "page_id": "he2020-p088",
+          "pdf_page": 88,
+          "section": "policy_options",
+          "chars": 1230
+        },
+        {
+          "page_id": "he2020-p089",
+          "pdf_page": 89,
+          "section": "policy_options",
+          "chars": 3084
+        },
+        {
+          "page_id": "he2020-p090",
+          "pdf_page": 90,
+          "section": "policy_options",
+          "chars": 3555
+        },
+        {
+          "page_id": "he2020-p091",
+          "pdf_page": 91,
+          "section": "policy_options",
+          "chars": 3915
+        },
+        {
+          "page_id": "he2020-p092",
+          "pdf_page": 92,
+          "section": "policy_options",
+          "chars": 3147
+        },
+        {
+          "page_id": "he2020-p093",
+          "pdf_page": 93,
+          "section": "policy_options",
+          "chars": 3288
+        },
+        {
+          "page_id": "he2020-p094",
+          "pdf_page": 94,
+          "section": "policy_options",
+          "chars": 2572
+        },
+        {
+          "page_id": "he2020-p095",
+          "pdf_page": 95,
+          "section": "policy_options",
+          "chars": 3180
+        },
+        {
+          "page_id": "he2020-p096",
+          "pdf_page": 96,
+          "section": "policy_options",
+          "chars": 2932
+        }
+      ]
+    }
+  ]
+}
